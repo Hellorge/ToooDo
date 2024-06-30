@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=ToooDo
+Comment=A modern To-Do application
+Exec=python3 main.py
+Icon=/run/media/hellorge/PIT/Desktop/projects/ToooDo/icons/todo.png
+Terminal=false
+Type=Application
+Categories=Utility;
