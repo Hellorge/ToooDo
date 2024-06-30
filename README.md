@@ -10,4 +10,4 @@ This app has 3 interfaces,
 
    ![Screenshot of Quickadd dialog.](https://github.com/Hellorge/ToooDo/blob/master/imgs/quickadddialog.png)
 
-3. System Tray dropdown, completing tasks and other stuff. (WIP)
+3. System Tray dropdown, completing tasks and other stuff. (Highly WIP)
