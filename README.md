@@ -8,6 +8,6 @@ This app has 3 interfaces,
 
 3. Quickadd dialog, creating a new task quickly.
 
-  ![Screenshot of Quickadd dialog.](https://github.com/Hellorge/ToooDo/blob/master/imgs/quickadddialog.png)
+   ![Screenshot of Quickadd dialog.](https://github.com/Hellorge/ToooDo/blob/master/imgs/quickadddialog.png)
 
 5. System Tray dropdown, completing tasks and other stuff.
