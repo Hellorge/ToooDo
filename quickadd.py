@@ -1,19 +1,17 @@
 from PyQt6.QtWidgets import QDialog, QLineEdit, QTextEdit, QPushButton, QVBoxLayout, QHBoxLayout, QDateTimeEdit
 from PyQt6.QtCore import pyqtSignal, QDateTime
+from PyQt6.QtGui import QIcon
 
 class QuickAddDialog(QDialog):
     taskAdded = pyqtSignal(str, str, QDateTime)
 
-    def __init__(self, task_manager, show=True, parent=None):
+    def __init__(self, task_manager, parent=None):
         super().__init__(parent)
 
         self.task_manager = task_manager
 
         self.build()
         self.connect()
-
-        if show:
-            self.show()
 
     def connect(self):
         self.taskAdded.connect(self.task_manager.add_task)
@@ -27,6 +25,7 @@ class QuickAddDialog(QDialog):
 
     def build(self):
         self.setWindowTitle("ToooDo")
+        self.setWindowIcon(QIcon("./icons/todo.png"))
         self.setGeometry(0, 0, 416, 230)
 
         self.titleEdit = QLineEdit(self)
@@ -52,7 +51,7 @@ class QuickAddDialog(QDialog):
         # Horizontal layout for date and buttons
         buttonLayout = QHBoxLayout()
         buttonLayout.addWidget(self.dueDateEdit)
-        buttonLayout.addStretch()  # Adds space between date and buttons
+        buttonLayout.addStretch()
         buttonLayout.addWidget(self.addButton)
         buttonLayout.addWidget(self.cancelButton)
 

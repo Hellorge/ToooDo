@@ -1,39 +1,52 @@
-from PyQt6.QtWidgets import QMainWindow, QPushButton, QVBoxLayout, QWidget, QListWidget, QListWidgetItem, QHBoxLayout
-from taskitem import TaskItemWidget
+import sys
+from PyQt6.QtWidgets import QApplication, QMainWindow, QListWidget, QVBoxLayout, QHBoxLayout, QWidget, QPushButton, QLabel, QListWidgetItem, QFrame
+from PyQt6.QtGui import QIcon
+from PyQt6.QtCore import Qt
+from taskmanager import TaskManager
 
 class MainWindow(QMainWindow):
     def __init__(self, task_manager, parent=None):
         super().__init__(parent)
         self.task_manager = task_manager
+        self.parent = parent
 
-        self.setWindowTitle("ToooDo")
-        self.setGeometry(100, 100, 600, 400)
-
-        self.central_widget = QWidget()
-        self.setCentralWidget(self.central_widget)
-
-        self.layout = QHBoxLayout(self.central_widget)
-
-        # List widget to display tasks
-        self.task_list = QListWidget(self)
-        self.layout.addWidget(self.task_list)
-
-        # Refresh button
-        self.refresh_button = QPushButton("Refresh", self)
-        self.refresh_button.clicked.connect(self.fetch_tasks)
-        self.layout.addWidget(self.refresh_button)
-
-        # Fetch and display tasks initially
+        self.build()
         self.fetch_tasks()
-
+    
     def fetch_tasks(self):
         self.task_list.clear()
         tasks = self.task_manager.get_tasks()
         for task in tasks:
-            item = QListWidgetItem(self.task_list)
-            task_widget = TaskItemWidget(task)
-            item.setSizeHint(task_widget.sizeHint())
+            item = QListWidgetItem(f"{task[1]} - {task[2]}")
             self.task_list.addItem(item)
-            self.task_list.setItemWidget(item, task_widget)
 
-        print(f"Fetched tasks: {tasks}")
+    def build(self):
+        self.setWindowTitle("ToooDo")
+        self.setWindowIcon(QIcon("icons/korg-todo.png"))
+        self.setGeometry(100, 100, 800, 600)
+
+        self.central_widget = QWidget()
+        self.setCentralWidget(self.central_widget)
+        self.layout = QHBoxLayout(self.central_widget)
+        
+        # Sidebar
+        self.sidebar = QListWidget()
+        self.sidebar.setFixedWidth(200)
+        self.sidebar.addItem("Inbox")
+        self.sidebar.addItem("Today")
+        self.sidebar.addItem("Scheduled")
+        self.sidebar.addItem("Labels")
+        self.layout.addWidget(self.sidebar)
+        
+        # Main content area
+        self.content_layout = QVBoxLayout()
+        self.layout.addLayout(self.content_layout)
+        
+        # Task display
+        self.task_list = QListWidget()
+        self.content_layout.addWidget(self.task_list)
+        
+        # Refresh Button
+        self.refresh_button = QPushButton("Refresh")
+        self.refresh_button.clicked.connect(self.fetch_tasks)
+        self.content_layout.addWidget(self.refresh_button)

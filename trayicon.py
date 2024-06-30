@@ -9,11 +9,11 @@ class TrayIcon(QSystemTrayIcon):
         self.task_manager = task_manager
         self.main_window = main_window
 
-        self.setIcon(QIcon("icons/tooodo.png"))
+        # self.setIcon(QIcon("icons/tasks.svg"))
         self.setVisible(True)
 
         # self.menu = TrayMenu()
-        
+
         # Connect buttons
         # self.menu.addTaskButton.clicked.connect(self.show_quick_add_dialog)
         # self.menu.exitButton.clicked.connect(QApplication.instance().quit)
