@@ -1,14 +1,15 @@
 import sys
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtGui import QIcon
-from quickadd import QuickAddDialog
-from mainwindow import MainWindow
-from trayicon import TrayIcon
-from taskmanager import TaskManager
+from src.quickadd import QuickAddDialog
+from src.mainwindow import MainWindow
+from src.trayicon import TrayIcon
+from src.taskmanager import TaskManager
 
 def main(argv):
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("./icons/korg-todo.png"))
+    # app.setWindowIcon(QIcon("/run/media/hellorge/PIT/Desktop/projects/ToooDo/icons/todo.png"))
+    app.setDesktopFileName('/run/media/hellorge/PIT/Desktop/projects/ToooDo/tooodo')
     task_manager = TaskManager()
 
     if list(set(["q", "quick-add", "quick", "quickadd", "quick add"]) & set(argv)):
