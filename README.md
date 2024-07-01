@@ -1,3 +1,5 @@
+*PyQt6 branch*
+
 This is a simple Tooodo application based on PyQt6,
 I needed an app which can closely work with system like selecting text and directly creating a task from it and all.
 
