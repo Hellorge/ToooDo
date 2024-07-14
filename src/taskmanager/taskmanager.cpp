@@ -11,7 +11,7 @@ TaskManager::TaskManager(QObject *parent)
     db_path = QDir::homePath() + "/.tooodo/db";
     ensureDirectoryExists();
     createTasksTable();
-    printTableSchema();
+    // printTableSchema();
 }
 
 void TaskManager::ensureDirectoryExists()

@@ -28,7 +28,7 @@ void MainWindow::fetchTasks()
     for (TaskItem *task : tasks) {
         QListWidgetItem *item = new QListWidgetItem(ui->taskList);
 
-        task->setParent(ui->taskList);
+        task->setParent(this);
         item->setSizeHint(task->sizeHint());
         ui->taskList->setItemWidget(item, task);
     }

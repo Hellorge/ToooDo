@@ -28,7 +28,6 @@ TaskItem::TaskItem(QWidget *parent)
 
     setCompactMode(true);
 
-    qDebug() << "logging--" << id;
 }
 
 TaskItem::~TaskItem()
