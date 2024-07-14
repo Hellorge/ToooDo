@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include "taskitem/taskitem.h"
 #include <QListWidgetItem>
-#include <QVariantMap>
 #include <QToolButton>
 
 MainWindow::MainWindow(TaskManager *taskManager, QWidget *parent)
@@ -24,16 +23,14 @@ void MainWindow::fetchTasks()
 {
     ui->taskList->clear();
 
-    QList<QSharedPointer<TaskItem>> tasks = taskManager->getTasks();
+    QList<TaskItem*> tasks = taskManager->getTasks();
 
-    qDebug() << tasks;
-    for (const auto &task : tasks) {
-        QWidget *taskWidget = task->getUIWidget();
-
+    for (TaskItem *task : tasks) {
         QListWidgetItem *item = new QListWidgetItem(ui->taskList);
-        item->setSizeHint(taskWidget->sizeHint());
-        ui->taskList->addItem(item);
-        // ui->taskList->setItemWidget(item, taskWidget);
+
+        task->setParent(ui->taskList);
+        item->setSizeHint(task->sizeHint());
+        ui->taskList->setItemWidget(item, task);
     }
 }
 

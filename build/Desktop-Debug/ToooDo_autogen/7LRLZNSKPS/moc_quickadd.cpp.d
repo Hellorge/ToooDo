@@ -607,25 +607,21 @@
   /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
-  /usr/include/qt6/QtCore/QDateTime \
   /usr/include/qt6/QtCore/QList \
-  /usr/include/qt6/QtCore/QMap \
   /usr/include/qt6/QtCore/QMultiHash \
   /usr/include/qt6/QtCore/QMultiMap \
   /usr/include/qt6/QtCore/QObject \
+  /usr/include/qt6/QtCore/QPropertyAnimation \
   /usr/include/qt6/QtCore/QRect \
   /usr/include/qt6/QtCore/QSharedDataPointer \
   /usr/include/qt6/QtCore/QSize \
   /usr/include/qt6/QtCore/QSizeF \
-  /usr/include/qt6/QtCore/QString \
-  /usr/include/qt6/QtCore/QVariant \
-  /usr/include/qt6/QtCore/QVariantList \
-  /usr/include/qt6/QtCore/QVariantMap \
   /usr/include/qt6/QtCore/QWeakPointer \
   /usr/include/qt6/QtCore/q20functional.h \
   /usr/include/qt6/QtCore/q20memory.h \
   /usr/include/qt6/QtCore/q20type_traits.h \
   /usr/include/qt6/QtCore/q23utility.h \
+  /usr/include/qt6/QtCore/qabstractanimation.h \
   /usr/include/qt6/QtCore/qalgorithms.h \
   /usr/include/qt6/QtCore/qanystringview.h \
   /usr/include/qt6/QtCore/qarraydata.h \
@@ -663,6 +659,7 @@
   /usr/include/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/qt6/QtCore/qdebug.h \
   /usr/include/qt6/QtCore/qdir.h \
+  /usr/include/qt6/QtCore/qeasingcurve.h \
   /usr/include/qt6/QtCore/qelapsedtimer.h \
   /usr/include/qt6/QtCore/qendian.h \
   /usr/include/qt6/QtCore/qeventloop.h \
@@ -713,6 +710,7 @@
   /usr/include/qt6/QtCore/qpair.h \
   /usr/include/qt6/QtCore/qpoint.h \
   /usr/include/qt6/QtCore/qprocessordetection.h \
+  /usr/include/qt6/QtCore/qpropertyanimation.h \
   /usr/include/qt6/QtCore/qqueue.h \
   /usr/include/qt6/QtCore/qrect.h \
   /usr/include/qt6/QtCore/qrefcount.h \
@@ -765,8 +763,7 @@
   /usr/include/qt6/QtCore/qutf8stringview.h \
   /usr/include/qt6/QtCore/quuid.h \
   /usr/include/qt6/QtCore/qvariant.h \
-  /usr/include/qt6/QtCore/qvariantlist.h \
-  /usr/include/qt6/QtCore/qvariantmap.h \
+  /usr/include/qt6/QtCore/qvariantanimation.h \
   /usr/include/qt6/QtCore/qvarlengtharray.h \
   /usr/include/qt6/QtCore/qvector.h \
   /usr/include/qt6/QtCore/qversiontagging.h \

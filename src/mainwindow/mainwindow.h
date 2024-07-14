@@ -14,7 +14,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(TaskManager* taskManager, QWidget *parent = nullptr);
+    explicit MainWindow(TaskManager *taskManager, QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -23,8 +23,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    QuickAdd* quickAdd;
-    TaskManager* taskManager;
+    QuickAdd *quickAdd;
+    TaskManager *taskManager;
 };
 
 #endif // MAINWINDOW_H

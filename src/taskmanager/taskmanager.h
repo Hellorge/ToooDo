@@ -2,9 +2,6 @@
 #define TASKMANAGER_H
 
 #include <QObject>
-#include <QVariantMap>
-#include <QVariantList>
-#include <QDateTime>
 #include "taskitem/taskitem.h"
 
 class TaskManager : public QObject
@@ -14,9 +11,9 @@ class TaskManager : public QObject
 public:
     explicit TaskManager(QObject *parent = nullptr);
     void addTask(TaskItem *task);
-    QList<QSharedPointer<TaskItem>> getTasks();
-    void completeTask(int taskId);
-    void updateTask(int taskId, const QMap<QString, QVariant> &data);
+    QList<TaskItem*> getTasks();
+    void updateTask(TaskItem *task);
+    void printTableSchema();
 
 signals:
     void tasksChanged();

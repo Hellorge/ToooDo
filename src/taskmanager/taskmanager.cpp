@@ -2,6 +2,8 @@
 #include "taskitem/taskitem.h"
 #include <QDir>
 #include <QxOrm.h>
+#include <QSqlDatabase>
+#include <QSqlQuery>
 
 TaskManager::TaskManager(QObject *parent)
     : QObject(parent)
@@ -9,6 +11,7 @@ TaskManager::TaskManager(QObject *parent)
     db_path = QDir::homePath() + "/.tooodo/db";
     ensureDirectoryExists();
     createTasksTable();
+    printTableSchema();
 }
 
 void TaskManager::ensureDirectoryExists()
@@ -34,29 +37,56 @@ void TaskManager::createTasksTable()
 void TaskManager::addTask(TaskItem *task)
 {
     qx::dao::insert(task);
-
     emit tasksChanged();
 }
 
-QList<QSharedPointer<TaskItem>> TaskManager::getTasks()
+void TaskManager::updateTask(TaskItem *task)
 {
-    QList<QSharedPointer<TaskItem>> taskList;
+    qx::dao::save(task);
+    emit tasksChanged();
+}
+
+QList<TaskItem*> TaskManager::getTasks()
+{
+    QList<TaskItem*> taskList;
     qx::dao::fetch_all(taskList);
     return taskList;
 }
 
-void TaskManager::completeTask(int taskId)
+void TaskManager::printTableSchema()
 {
-    updateTask(taskId, {{"completed", 1}});
-}
+    QString db_file = db_path + "/tooodo.db";
 
-void TaskManager::updateTask(int taskId, const QVariantMap& data)
-{
-    // TaskItem task;
-    // task.id = taskId;
-    // qx::dao::fetch_by_id(task);
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "schema_connection");
+    db.setDatabaseName(db_file);
 
-    // task.updateTask(data);
+    if (!db.open())
+    {
+        qDebug() << "Failed to open database:" << db.lastError().text();
+        return;
+    }
 
-    emit tasksChanged();
+    QString tableName = "TaskItem";
+    QSqlQuery query(db);
+    if (query.exec("SELECT * from " + tableName + ";"))
+    {
+        while (query.next())
+       {
+           int id = query.value("id").toInt();
+           QString title = query.value("title").toString();
+           QString description = query.value("description").toString();
+           QDateTime dueDate = query.value("due_date").toDateTime();
+           int priority = query.value("priority").toInt();
+           bool completed = query.value("completed").toBool();
+
+           qDebug() << "ID:" << id
+                    << "Title:" << title;
+       }
+    }
+    else
+    {
+        qDebug() << "Failed to retrieve table schema:" << query.lastError().text();
+    }
+
+    db.close();
 }

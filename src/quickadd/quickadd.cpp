@@ -5,15 +5,15 @@
 #include "taskitem/taskitem.h"
 // #include "svgmanager/svgmanager.h"
 
-QuickAdd::QuickAdd(TaskManager* taskManager, QWidget *parent) :
+QuickAdd::QuickAdd(TaskManager *taskManager, QWidget *parent) :
     QDialog(parent),
     taskManager(taskManager),
     ui(new Ui::QuickAdd),
     task(new TaskItem())
 {
     ui->setupUi(this);
-    // task->setParent(ui->newTaskBox);
-    ui->newTaskBox->addWidget(task->getUIWidget());
+    task->setMode(1);
+    ui->newTaskBox->addWidget(task);
     connect(ui->buttonBox->button(QDialogButtonBox::Save), &QPushButton::pressed, this, &QuickAdd::addTask);
 
     // QString svgPath = "/run/media/hellorge/PIT/Desktop/projects/pycreator/ToooDo/icons/svgs/flag-outline.svg";
@@ -23,10 +23,10 @@ QuickAdd::QuickAdd(TaskManager* taskManager, QWidget *parent) :
 
 void QuickAdd::addTask()
 {
-    // if (taskItem->title().isEmpty()) {
-    //     QMessageBox::warning(this, "Warning", "Title cannot be empty.");
-    //     return;
-    // }
+    if (!task->validate()) {
+        QMessageBox::warning(this, "Warning", "Title cannot be empty.");
+        return;
+    }
 
     taskManager->addTask(task);
 
