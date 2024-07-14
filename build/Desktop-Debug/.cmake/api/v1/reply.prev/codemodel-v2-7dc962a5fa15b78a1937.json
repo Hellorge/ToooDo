@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-95b126ff5ffb8995557d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ToooDo",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ToooDo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ToooDo-Debug-4f2ec4f6d9dc2a7aec3b.json",
+					"name" : "ToooDo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ToooDo_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ToooDo_autogen-Debug-e025495f372e550115fc.json",
+					"name" : "ToooDo_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ToooDo_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ToooDo_autogen_timestamp_deps-Debug-3f8da4a0d94e91187a12.json",
+					"name" : "ToooDo_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/run/media/hellorge/PIT/Desktop/projects/ToooDo.cpp/build/Desktop-Debug",
+		"source" : "/run/media/hellorge/PIT/Desktop/projects/ToooDo.cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

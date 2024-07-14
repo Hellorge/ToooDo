@@ -1,0 +1,26 @@
+# ninja log v5
+2640	22155	1720917687227130145	CMakeFiles/ToooDo.dir/src/taskitem/taskitem.cpp.o	93bef7327c3ecc62
+13	2696	1720920888688016025	ToooDo_autogen/timestamp	4d42a7ad91cc02cd
+13	2696	1720920888688016025	/run/media/hellorge/PIT/Desktop/projects/ToooDo.cpp/build/Desktop-Debug/ToooDo_autogen/timestamp	4d42a7ad91cc02cd
+13	2696	1720920888688016025	/run/media/hellorge/PIT/Desktop/projects/ToooDo.cpp/build/Desktop-Debug/ToooDo_autogen/mocs_compilation.cpp	4d42a7ad91cc02cd
+2697	19509	1720920905511016416	CMakeFiles/ToooDo.dir/src/quickadd/quickadd.cpp.o	80bccd8ecbb4872
+1326	11769	1720751381230231334	CMakeFiles/ToooDo.dir/src/mainwindow/taskitem/taskitem.cpp.o	6e639182f16b97fe
+2697	20020	1720920906025016428	CMakeFiles/ToooDo.dir/ToooDo_autogen/mocs_compilation.cpp.o	aa1c21644f25c9a3
+2697	19646	1720920905648016419	CMakeFiles/ToooDo.dir/src/main.cpp.o	b66afe273aceed0c
+2697	20900	1720920906904016448	CMakeFiles/ToooDo.dir/src/mainwindow/mainwindow.cpp.o	d190040e1b5b948e
+10472	18172	1720760988088057857	CMakeFiles/ToooDo.dir/src/libs/relativedates.cpp.o	e5c2311d8c83946f
+74	7772	1720752945870267688	CMakeFiles/ToooDo.dir/src/qx/task.cpp.o	8f0b062077425c94
+2699	20818	1720920906820016446	CMakeFiles/ToooDo.dir/src/taskmanager/taskmanager.cpp.o	8189338344535927
+22194	22931	1720917688003130163	ToooDo	15c7cbcf2776bd80
+13	2696	1720920888688016025	ToooDo_autogen/mocs_compilation.cpp	4d42a7ad91cc02cd
+13	2632	1720920968630017883	ToooDo_autogen/timestamp	4d42a7ad91cc02cd
+13	2632	1720920968630017883	ToooDo_autogen/mocs_compilation.cpp	4d42a7ad91cc02cd
+13	2632	1720920968630017883	/run/media/hellorge/PIT/Desktop/projects/ToooDo.cpp/build/Desktop-Debug/ToooDo_autogen/timestamp	4d42a7ad91cc02cd
+13	2632	1720920968630017883	/run/media/hellorge/PIT/Desktop/projects/ToooDo.cpp/build/Desktop-Debug/ToooDo_autogen/mocs_compilation.cpp	4d42a7ad91cc02cd
+2632	18865	1720920984877018260	CMakeFiles/ToooDo.dir/ToooDo_autogen/mocs_compilation.cpp.o	aa1c21644f25c9a3
+2632	19058	1720920985069018265	CMakeFiles/ToooDo.dir/src/main.cpp.o	b66afe273aceed0c
+2633	19942	1720920985952018285	CMakeFiles/ToooDo.dir/src/quickadd/quickadd.cpp.o	80bccd8ecbb4872
+2633	20662	1720920986672018302	CMakeFiles/ToooDo.dir/src/mainwindow/mainwindow.cpp.o	d190040e1b5b948e
+2634	21982	1720920987987018332	CMakeFiles/ToooDo.dir/src/taskmanager/taskmanager.cpp.o	8189338344535927
+2634	22294	1720920988300018340	CMakeFiles/ToooDo.dir/src/taskitem/taskitem.cpp.o	93bef7327c3ecc62
+22330	23069	1720920989074018358	ToooDo	15c7cbcf2776bd80
